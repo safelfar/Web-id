@@ -836,3 +836,105 @@ document.addEventListener('mousemove', (e) => {
     lastParticleTime = now;
   }
 });
+
+// Click Particle Effects
+document.addEventListener('DOMContentLoaded', function() {
+  let clickCount = 0;
+  
+  document.addEventListener('click', function(e) {
+    // Skip if clicking on interactive elements
+    if (e.target.closest('button, a, input, textarea, select')) {
+      return;
+    }
+    
+    createClickParticles(e.clientX, e.clientY);
+  });
+  
+  function createClickParticles(x, y) {
+    const particleCount = 8; // Jumlah partikel per klik
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'click-particle';
+      
+      // Random direction dan jarak
+      const angle = (360 / particleCount) * i + Math.random() * 45;
+      const distance = 50 + Math.random() * 100;
+      const randomX = Math.cos(angle * Math.PI / 180) * distance;
+      const randomY = Math.sin(angle * Math.PI / 180) * distance;
+      
+      // Set posisi awal
+      particle.style.left = x + 'px';
+      particle.style.top = y + 'px';
+      particle.style.setProperty('--random-x', randomX + 'px');
+      particle.style.setProperty('--random-y', randomY + 'px');
+      
+      // Random delay dan durasi
+      const delay = Math.random() * 0.1;
+      const duration = 0.6 + Math.random() * 0.4;
+      
+      particle.style.animation = `particle-float ${duration}s ease-out ${delay}s forwards`;
+      
+      document.body.appendChild(particle);
+      
+      // Hapus partikel setelah animasi selesai
+      setTimeout(() => {
+        if (particle.parentNode) {
+          particle.remove();
+        }
+      }, (duration + delay) * 1000);
+    }
+  }
+  
+  // Optional: Tambahkan efek ripple untuk klik yang lebih dramatis
+  function createRippleEffect(x, y) {
+    const ripple = document.createElement('div');
+    ripple.style.cssText = `
+      position: fixed;
+      left: ${x}px;
+      top: ${y}px;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 9998;
+      animation: ripple-expand 0.8s ease-out forwards;
+    `;
+    
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple-expand {
+        0% {
+          width: 0;
+          height: 0;
+          margin-left: 0;
+          margin-top: 0;
+          opacity: 1;
+        }
+        100% {
+          width: 200px;
+          height: 200px;
+          margin-left: -100px;
+          margin-top: -100px;
+          opacity: 0;
+        }
+      }
+    `;
+    
+    document.head.appendChild(style);
+    document.body.appendChild(ripple);
+    
+    setTimeout(() => {
+      ripple.remove();
+      style.remove();
+    }, 800);
+  }
+  
+  // Uncomment baris di bawah jika mau tambah efek ripple juga
+  // document.addEventListener('click', function(e) {
+  //   if (!e.target.closest('button, a, input, textarea, select')) {
+  //     createRippleEffect(e.clientX, e.clientY);
+  //   }
+  // });
+});
