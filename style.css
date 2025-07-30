@@ -1775,3 +1775,58 @@ textarea.form-input {
   
   .main-content { max-width: 1200px; }
 }
+/*-----------------------------------*\
+  #CLICK PARTICLES
+\*-----------------------------------*/
+
+.click-particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--neon-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.click-particle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: inherit;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: particle-pulse 0.6s ease-out;
+}
+
+@keyframes particle-float {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--random-x), var(--random-y)) scale(0);
+  }
+}
+
+@keyframes particle-pulse {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Light mode particles */
+[data-theme="light"] .click-particle {
+  background: #0099cc;
+  box-shadow: 0 0 10px #0099cc;
+}
