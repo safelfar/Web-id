@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salman Alfarisi - Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://github.com/Safelfar5/Safelfar5.github.io/blob/main/Safelfar.jpg" type="image/x-icon">
+
+  <!-- Meta Tags -->
+  <meta name="description" content="I'm Salman Alfarisi, an enthusiastic beginner in the field of Coding, eager to learn and develop new skills.">
+  <meta property="og:image" content="https://github.com/Safelfar5/Safelfar5.github.io/blob/main/Safelfar.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+  <meta name="keywords" content="web development, HTML, CSS, JavaScript, PHP, portfolio">
+  <meta name="author" content="Salman Alfarisi">
+  <meta property="og:url" content="https://www.agungdev.xyz/">  
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Salman Alfarisi" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.agungdev.xyz/" />
+  <meta property="og:title" content="Salman Alfarisi" />
+  <meta property="og:description" content="Web developer with experience in HTML, CSS, JavaScript, and PHP. Portfolio website showcasing my skills and projects." />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.agungdev.xyz/" />
+  <meta property="twitter:title" content="Salman Alfarisi" />
+  <meta property="twitter:description" content="I'm Salman Alfarisi, an enthusiastic beginner in the field of Coding, eager to learn and develop new skills." />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Ion Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Circular Cursor -->
+  <div id="cursor-inner"></div>
+  <div id="cursor-outer"></div>
+
+  <!-- Music Player -->
+  <button class="music-player" id="musicPlayer" title="Play/Pause Music">
+    <ion-icon name="musical-notes" class="music-icon"></ion-icon>
+  </button>
+  <audio id="backgroundMusic" loop></audio>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+    <ion-icon name="moon" class="theme-icon" id="themeIcon"></ion-icon>
+  </button>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Sidebar -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box" id="profile-pic">
+          <img src="https://raw.githubusercontent.com/Safelfar5/Safelfar5.github.io/refs/heads/main/Safelfar.jpg" alt="Salman Alfarisi" id="profile-image">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name glitch" title="Salman Alfarisi" data-text="Salman Alfarisi">
+            Salman Alfarisi
+            <span class="verified-badge" title="Verified">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12">
+                <path fill="#00d4ff" d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.164.865.25 1.335.25 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.032-.514 1.16-.688 1.942-1.991 1.942-3.486z"/>
+                <path fill="white" d="M10.97 13.97l-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6-6a.75.75 0 0 0-1.06-1.06L10.97 13.97z"/>
+              </svg>
+            </span>
+          </h1>
+          <p class="username position-left">@elfar.png</p>
+          <p class="role-text">I'm <span class="dynamic-text" id="dynamic-role">Developer</span></p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:cocspedsafliz@gmail.com" class="contact-link">cocspedsafliz@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+62 838-1777-9643" class="contact-link">+62 838-1777-9643</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="2005-05-05">05-05-2005</time>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Karanganyar, Jawa Tengah, INDONESIA</address>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="globe-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Created Web Date</p>
+              <address>12/05/2021</address>
+            </div>
+          </li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://www.facebook.com/saf.elfar.3" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="18" width="18">
+                <path d="M475.074 0H36.926C16.53 0 0 16.531 0 36.926v438.148C0 495.47 16.531 512 36.926 512H273.5V314H207v-77.5h66.5v-57.035c0-66.14 40.379-102.14 99.379-102.14 28.258 0 52.543 2.105 59.621 3.046V149.5h-40.684c-32.101 0-38.316 15.254-38.316 37.64v49.36h76.75l-10 77.5H353.5v198h121.574C495.47 512 512 495.469 512 475.074V36.926C512 16.53 495.469 0 475.074 0zm0 0" fill="currentColor"/>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://github.com/safelfar5" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 438.549 438.549" width="18" height="18">
+                <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 0 1-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.84 1.092-6.047 0-12.066-.498-18.047-1.493-5.977-.998-11.64-3.225-16.987-6.677-5.351-3.452-9.632-8.232-12.85-14.333l-2.918-6.683c-1.998-4.567-5.134-9.623-9.4-15.16-4.273-5.539-8.593-9.293-12.964-11.27l-2.096-1.498c-1.378-.972-2.709-2.142-3.99-3.521-1.281-1.378-2.229-2.759-2.848-4.142-.619-1.378-.113-2.517 1.517-3.419 1.634-.902 4.576-1.337 8.827-1.337l6.084.903c4.058.807 9.088 3.212 15.089 7.215 6.001 4.003 10.928 9.201 14.785 15.593 4.567 8.136 10.07 14.334 16.512 18.594 6.44 4.26 12.95 6.391 19.527 6.391 6.577 0 12.275-.501 17.095-1.503 4.816-1.002 9.335-2.506 13.557-4.512 1.809-13.426 6.733-23.751 14.771-30.974-11.426-1.284-21.698-3.209-30.813-5.771-9.116-2.566-18.525-6.554-28.232-11.967-9.708-5.413-17.792-12.116-24.254-20.11-6.465-7.994-11.764-18.453-15.897-31.377-4.133-12.924-6.2-27.846-6.2-44.762 0-24.095 7.87-44.61 23.614-61.546-7.372-18.127-6.685-38.426 2.063-60.896 5.769-1.808 14.336-.451 25.695 4.073 11.359 4.524 19.679 8.376 24.963 11.563 5.284 3.188 9.512 5.899 12.69 8.134 18.127-5.048 36.827-7.573 56.095-7.573 19.268 0 37.973 2.525 56.1 7.573l11.33-7.148c7.762-4.709 16.879-9.018 27.35-12.924 10.471-3.906 18.455-4.954 23.95-3.144 8.941 22.47 9.724 42.769 2.353 60.896 15.744 16.936 23.614 37.451 23.614 61.546 0 16.916-2.071 31.847-6.214 44.794-4.143 12.947-9.456 23.397-15.942 31.35-6.486 7.953-14.594 14.656-24.322 20.109-9.728 5.453-19.137 9.441-28.232 11.967-9.096 2.526-19.368 4.451-30.813 5.771 10.424 8.998 15.636 23.183 15.636 42.554v63.147c0 3.422 1.236 6.28 3.711 8.562 2.474 2.279 6.289 2.95 11.419 1.996 44.157-14.655 80.179-41.063 108.063-79.227C424.06 315.375 438 272.41 438 224.63c0-39.776-9.803-76.462-29.408-110.057z" fill="currentColor"/>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://www.instagram.com/elfar.png" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511.9" height="18" width="18">
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM456.4 420.4c-6.2 15.6-18.2 27.6-33.8 33.8-23.4 9.3-79 7.2-104.9 7.2s-81.5 2.1-104.9-7.2c-15.6-6.2-27.6-18.2-33.8-33.8-9.3-23.4-7.2-79-7.2-104.9s-2.1-81.5 7.2-104.9c6.2-15.6 18.2-27.6 33.8-33.8 23.4-9.3 79-7.2 104.9-7.2s81.5-2.1 104.9 7.2c15.6 6.2 27.6 18.2 33.8 33.8 9.3 23.4 7.2 79 7.2 104.9s2.1 81.5-7.2 104.9z" fill="currentColor"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Navigation -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link="about">About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="resume">Resume</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="contact">Contact</button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- About Section -->
+      <article class="about active" data-page="about">
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I'm Salman Alfarisi, an enthusiastic beginner in the field of Coding, eager to learn and develop new skills. 
+            I have a passion for web development and creating innovative digital solutions.
+          </p>
+          <p>
+            My journey in technology started with curiosity and has grown into a dedication to mastering various programming 
+            languages and frameworks. I believe in continuous learning and staying updated with the latest trends in technology.
+          </p>
+        </section>
+
+        <!-- Service Section -->
+        <section class="service">
+          <h3 class="h3 service-title">What I'm doing</h3>
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d4ff'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E" alt="web development icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web Development</h4>
+                <p class="service-item-text">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d4ff'%3E%3Cpath d='M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3'/%3E%3C/svg%3E" alt="content creator icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Content Creator</h4>
+                <p class="service-item-text">
+                  Creating engaging digital content and creative multimedia projects.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d4ff'%3E%3Cpath d='M15 8v8H5l-2-1v-6l2-1h10M23 8l-6 4 6 4V8'/%3E%3C/svg%3E" alt="video editor icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Video Editor</h4>
+                <p class="service-item-text">
+                  Professional video editing and post-production for various media projects.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d4ff'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E" alt="3d editing icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">3D Editing</h4>
+                <p class="service-item-text">
+                  3D modeling, animation, and rendering for digital art and visualization.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d4ff'%3E%3Cpath d='M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a7 7 0 0 1-7 7H9a7 7 0 0 1-7-7H1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z'/%3E%3C/svg%3E" alt="electronics icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Electronics</h4>
+                <p class="service-item-text">
+                  Hardware design, circuit development, and embedded systems programming.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d4ff'%3E%3Cpath d='M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1'/%3E%3C/svg%3E" alt="mobile app icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile Apps</h4>
+                <p class="service-item-text">
+                  Professional development of applications for iOS and Android.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d4ff'%3E%3Cpath d='M7 17.5L4 20.5L4 4L7 7M17 7L20 4V20.5L17 17.5M8 12L16 12M12 8V16'/%3E%3C/svg%3E" alt="graphic design icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Graphic Design</h4>
+                <p class="service-item-text">
+                  Creative visual design for branding, logos, and digital media projects.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- Resume Section -->
+      <article class="resume" data-page="resume">
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Baitul Mukmin Qurani (Pondok Tahfidz) & Pondok Fatiha (IT)</h4>
+              <span>SMA - Matesih & Boyolali</span>
+              <p class="timeline-text">
+                Completed high school education at Baitul Mukmin Qurani focusing on Quranic memorization and also studied at Pondok Fatiha specializing in Information Technology.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Ponpes Miftahul Huda Sambi Boyolali</h4>
+              <span>SMP - Pondok Bahasa</span>
+              <p class="timeline-text">
+                Attended junior high school at Islamic boarding school Miftahul Huda Sambi Boyolali with specialization in language studies.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">SDN 03 BERUK</h4>
+              <span>SD - Jatiyoso</span>
+              <p class="timeline-text">
+                Completed elementary education at SDN 01 BERUK in Karanganyar, building foundational knowledge and skills.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Web Developer</h4>
+              <span>2021 — Present</span>
+              <p class="timeline-text">
+                Building and maintaining websites using modern technologies and frameworks. Focus on creating responsive and user-friendly interfaces.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Freelance Developer</h4>
+              <span>2020 — 2021</span>
+              <p class="timeline-text">
+                Worked on various freelance projects developing custom solutions for clients. Gained experience in project management and client communication.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">My skills</h3>
+          <ul class="skills-list content-card">
+            <li class="skills-item tooltip-container" data-tooltip="HTML, CSS, JavaScript, React, PHP - Creating responsive and interactive web applications">
+              <div class="title-wrapper">
+                <h5 class="h5">Web development</h5>
+                <span>51%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 51%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item tooltip-container" data-tooltip="Adobe Photoshop, Illustrator, Figma - Creating visual designs, logos, and brand materials">
+              <div class="title-wrapper">
+                <h5 class="h5">Graphic design</h5>
+                <span>79%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 79%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item tooltip-container" data-tooltip="Adobe Premiere Pro, After Effects, DaVinci Resolve - Professional video editing and motion graphics">
+              <div class="title-wrapper">
+                <h5 class="h5">Video editing</h5>
+                <span>81%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 81%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item tooltip-container" data-tooltip="Digital and portrait photography with professional editing techniques using Lightroom">
+              <div class="title-wrapper">
+                <h5 class="h5">Photography</h5>
+                <span>75%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%"></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- Portfolio Section -->
+      <article class="portfolio" data-page="portfolio">
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-select-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="select-list">
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+            <li class="project-item active tooltip-container" data-filter-item data-category="web development" data-tooltip="Personal portfolio website built with HTML5, CSS3, and JavaScript. Features responsive design, particle animations, and interactive elements.">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' fill='%23eee'%3E%3Crect width='400' height='300' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999'%3EProject Image%3C/text%3E%3C/svg%3E" alt="portfolio project" loading="lazy">
+                </figure>
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item active tooltip-container" data-filter-item data-category="web design" data-tooltip="Modern UI/UX design project focusing on user experience and clean interface design. Created using Figma with attention to usability principles.">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' fill='%23eee'%3E%3Crect width='400' height='300' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999'%3EDesign Project%3C/text%3E%3C/svg%3E" alt="design project" loading="lazy">
+                </figure>
+                <h3 class="project-title">UI/UX Design</h3>
+                <p class="project-category">Web design</p>
+              </a>
+            </li>
+
+            <li class="project-item active tooltip-container" data-filter-item data-category="applications" data-tooltip="Mobile application development using React Native. Features include user authentication, real-time data sync, and offline functionality.">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' fill='%23eee'%3E%3Crect width='400' height='300' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999'%3EMobile App%3C/text%3E%3C/svg%3E" alt="mobile app" loading="lazy">
+                </figure>
+                <h3 class="project-title">Mobile App</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <li class="project-item active tooltip-container" data-filter-item data-category="web development" data-tooltip="E-commerce platform built with PHP and MySQL. Includes shopping cart, payment integration, inventory management, and admin dashboard.">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' fill='%23eee'%3E%3Crect width='400' height='300' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999'%3EE-commerce%3C/text%3E%3C/svg%3E" alt="e-commerce project" loading="lazy">
+                </figure>
+                <h3 class="project-title">E-commerce Website</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- Contact Section -->
+      <article class="contact" data-page="contact">
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0347!2d110.9842285!3d-7.5562985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16f0e7b8e4b7%3A0x5b5b5b5b5b5b5b5b!2sKaranganyar%2C%20Central%20Java%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-info-section">
+          <h3 class="h3 form-title">Get In Touch</h3>
+          <p class="contact-description">
+            Feel free to reach out to me through any of the platforms below. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+          </p>
+          
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-icon">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <a href="mailto:cocspedsafliz@gmail.com" class="contact-link">cocspedsafliz@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </div>
+              <div class="contact-details">
+                <h4>WhatsApp</h4>
+                <a href="https://wa.me/6283817779643" class="contact-link" target="_blank">+62 838-1777-9643</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </div>
+              <div class="contact-details">
+                <h4>Facebook</h4>
+                <a href="https://www.facebook.com/saf.elfar.3" class="contact-link" target="_blank">Salman Alfarisi</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </div>
+              <div class="contact-details">
+                <h4>Instagram</h4>
+                <a href="https://www.instagram.com/elfar.png" class="contact-link" target="_blank">@elfar.png</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <ion-icon name="logo-github"></ion-icon>
+              </div>
+              <div class="contact-details">
+                <h4>GitHub</h4>
+                <a href="https://github.com/safelfar5" class="contact-link" target="_blank">safelfar5</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
